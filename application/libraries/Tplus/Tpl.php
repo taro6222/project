@@ -8,13 +8,13 @@ class Tpl {
 			/**
 			 *  (1/4) template directory 
 			 */
-			'HtmlRoot' => './html/',
+			'HtmlRoot' => './themes/',
 
 			/**
 			 *  (2/4) template script directory 
 			 * 		must be writable (rwx) by the web server. 
 			 */
-    		'HtmlScriptRoot' => './html.php/',
+    		'HtmlScriptRoot' => './var/cache/',
 
 			/**
 			 *  (3/4) script check

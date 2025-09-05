@@ -4,7 +4,7 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 // ------------------------------------------------------------------------
 
-require_once (APPPATH . 'libraries/Tplus/Tpl-dist.php');
+require_once (APPPATH . 'libraries/Tplus/Tpl.php');
 
 /**
  * Template
@@ -17,25 +17,7 @@ require_once (APPPATH . 'libraries/Tplus/Tpl-dist.php');
  */
 class Template extends Tpl
 {
-	public $compile_check = true;
-	public $compile_dir = '_compile';
-	public $compile_ext = 'php';
-	public $skin = '';
-	public $notice = false;
-	public $path_digest = true;
-
-	public $prefilter = 'common';
-	public $postfilter = 'removeTmpCode | arrangeSpace';
-	public $permission = 0777;
-	public $safe_mode = true;
-	public $auto_constant = false;
-
-	public $caching = false;
-	public $cache_dir = '_cache';
-	public $cache_expire = 3600;
-
-	public $template_dir = '';
-
+	public $module;
 	public $CI;
 
 	// --------------------------------------------------------------------
@@ -45,22 +27,29 @@ class Template extends Tpl
 	 *
 	 * @return
 	 */
-	function __construct()
+	public function __construct()
 	{
 		$this->CI = &get_instance();
-		$this->compile_dir = 'var/_compile';
-        if (!is_dir($this->compile_dir)) {
-            mkdir($this->compile_dir, 0777);
-        }
+
 
 		$currentModule = $this->currentModule();
 
-		$this->template_dir = $this->templateDirectory($currentModule);
-		$file = $this->templateFile($currentModule);
-		$this->define($currentModule, $file);
+		//$this->template_dir = $this->templateDirectory($currentModule);
+		//$file = $this->templateFile($currentModule);
+		//$this->define($currentModule, $file);
 	}
 
-	// --------------------------------------------------------------------
+	function display($path=false, $data=[])
+	{
+
+		$mainContents = $this->get($path, $data);
+		//echo $this->get($path, $data);
+
+		echo Modules::run('layout/frame', $mainContents);
+	}
+
+
+
 
 	function file( $data=false, $path='' )
 	{
@@ -72,16 +61,41 @@ class Template extends Tpl
 			{
 				$fid  = ($key == 'this') ? $currentModule : $key;
 				$file = ($var == 'this') ? $this->templateFile($currentModule) : $var;
-				$this->define($fid, $file);
+				//$this->define($fid, $file);
 			}
 		}
 		else {
-			$this->define($currentModule, $this->templateFile($currentModule));
+			//$this->define($currentModule, $this->templateFile($currentModule));
 		}
 	}
 
+	function display2($path=false, $data=[])
+	{
+		if (ENVIRONMENT != 'production') {
+			$this->CI->output->enable_profiler(true);
+		}
+
+		if ($path) {
+			$currentModule = $path;
+		}
+		else {
+			$currentModule = $this->currentModule();
+		}
+
+		$currentModule = $this->currentModule();
+		$mainContents = $this->get($currentModule, $data);
+
+		echo Modules::run('layout/frame', $mainContents);
+	}
+
+	function assigns($keyOrArray, $val=null)
+	{
+			$tplus = Tpl::_();
+			$tplus->assign($keyOrArray, $val=null);
+	}
+
 	/**
-	 * Template::view()
+	 * Templa0te::view()
 	 *
 	 * @param mixed $template
 	 * @param mixed $data
@@ -111,33 +125,6 @@ class Template extends Tpl
 		{
 			return $this->fetch($template);
 		}
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Template::display()
-	 *
-	 * @param bool $defineName
-	 * @return
-	 */
-	function display($defineName = false)
-	{
-		if (ENVIRONMENT != 'production') {
-			$this->CI->output->enable_profiler(true);
-		}
-
-		if ($defineName) {
-			$currentModule = $defineName;
-		}
-		else {
-			$currentModule = $this->currentModule();
-		}
-
-		$currentModule = $this->currentModule();
-		$mainContents = $this->fetch($currentModule);
-
-		echo Modules::run('layout/frame', $mainContents);
 	}
 
 	// --------------------------------------------------------------------
@@ -221,7 +208,7 @@ class Template extends Tpl
 	 *
 	 * @return
 	 */
-	function currentModule()
+	public function currentModule()
 	{
 		$module = ($this->CI->uri->segment(1) == '') ? $this->CI->uri->rsegment(1) : $this->CI->uri->segment(1);
 
@@ -238,7 +225,7 @@ class Template extends Tpl
 
 	// --------------------------------------------------------------------
 
-	function isAdminModule()
+	public function isAdminModule()
 	{
 		$ret = false;
 		if ( $this->CI->uri->segment(1) == 'admin' ) {
