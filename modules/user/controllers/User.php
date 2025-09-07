@@ -20,6 +20,7 @@ class User extends MX_Controller
 
 	public function list()
 	{
+		echo 'user.list =';
 /*
 		// library
 		$this->load->library('common');
@@ -69,7 +70,7 @@ class User extends MX_Controller
 		$this->load->library('template');
 
 		$data = [
-			'user_list' => '00000',
+			//'user_list' => '00000',
 		];
 
 		$this->template->display('default/user.list.html', $data);

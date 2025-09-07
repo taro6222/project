@@ -22,11 +22,11 @@ class Template extends Tpl
 
 	protected static function config() {
 		return array_merge(parent::config(), [
-		   'HtmlRoot'			=>'./themes/',
-		   'HtmlScriptRoot'	=>'./var/cache/',
-		  ]);
-   }
- 
+		'HtmlRoot'			=>'./themes/',
+		'HtmlScriptRoot'	=>'./var/cache/',
+		]);
+	}
+
 
 	// --------------------------------------------------------------------
 
