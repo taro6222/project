@@ -20,6 +20,14 @@ class Template extends Tpl
 	public $module;
 	public $CI;
 
+	protected static function config() {
+		return array_merge(parent::config(), [
+		   'HtmlRoot'			=>'./themes/',
+		   'HtmlScriptRoot'	=>'./var/cache/',
+		  ]);
+   }
+ 
+
 	// --------------------------------------------------------------------
 
 	/**
@@ -27,7 +35,7 @@ class Template extends Tpl
 	 *
 	 * @return
 	 */
-	public function __construct()
+	function __construct()
 	{
 		$this->CI = &get_instance();
 
@@ -39,13 +47,27 @@ class Template extends Tpl
 		//$this->define($currentModule, $file);
 	}
 
-	function display($path=false, $data=[])
+	public static function display($path=false, $data=[])
 	{
+		$page = Tpl::get($path, $data);
+		$main = [
+			'title'=>'News',
+			'content'=>$page,
+		];
 
-		$mainContents = $this->get($path, $data);
-		//echo $this->get($path, $data);
+		$source = Tpl::get('default/layout.frame.html', $main);
 
-		echo Modules::run('layout/frame', $mainContents);
+		$source = str_replace( "__assets", '/themes/default' . '/__assets',  $source );
+		$source = str_replace( "__image", '/themes/default' . '/__image',  $source );
+		$source = str_replace( "__style",  '/themes/default' . '/__style',  $source  );
+		$source = str_replace( "__script", '/themes/default' . '/__script', $source  );
+		$source = str_replace( "__common", '/themes/default' . '/__common', $source  );
+		$source = str_replace( "__plugin", '/themes/default' . '/__plugin', $source  );
+		$source = str_replace( "__media", '/themes/default' . '/__media', $source  );
+		$source = str_replace( "__manager", '/themes/default' . '/__manager', $source  );
+
+		echo $source;//$mainContents = $this->get($path, $data);
+		//echo Modules::run('layout/frame', $mainContents);
 	}
 
 

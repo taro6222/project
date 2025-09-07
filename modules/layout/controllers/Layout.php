@@ -15,7 +15,6 @@ class Layout extends MX_Controller
 	 */
 	function index()
 	{
-		echo memory_get_usage();
 		//echo date("Y-m-d", strtotime(date("Y-m-d")." -2 day"));
 		$this->load->library('auth');
 
@@ -42,7 +41,7 @@ class Layout extends MX_Controller
 		$this->template->module = 'layout';
 
 		$data = [
-			'MAIN_CONTENTS', $mainContents,
+			//'MAIN_CONTENTS', $mainContents,
 		];
 
 		$this->template->display('default/layout.frame.html', $data);

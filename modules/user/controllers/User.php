@@ -20,6 +20,7 @@ class User extends MX_Controller
 
 	public function list()
 	{
+/*
 		// library
 		$this->load->library('common');
 		$this->load->library('pagination');
@@ -56,7 +57,7 @@ class User extends MX_Controller
 			);
 		}
 
-		$this->load->library('template');
+		
 		$this->template->assign('CURRENT_PAGE', $current_page);
 		$this->template->assign('SEARCH_NAME', $search_name);
 		$this->template->assign('LOOP_USER', $loop_user);
@@ -64,6 +65,14 @@ class User extends MX_Controller
 		$this->template->assign('TOTAL_SEARCH', $total_rows);
 		$this->template->assign('PAGINATION', $this->pagination->create_links());
 		$this->template->display();
+*/
+		$this->load->library('template');
+
+		$data = [
+			'user_list' => '00000',
+		];
+
+		$this->template->display('default/user.list.html', $data);
 	}
 
 	public function info()

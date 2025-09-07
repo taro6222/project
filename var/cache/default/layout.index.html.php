@@ -1,4 +1,4 @@
-<?php /* Tplus 1.1.3-p2 2024-08-08 14:08:29 D:\Laragon\www\project\themes\default\layout.index.html 000165527 */ ?>
+<?php /* Tplus 1.1.3-p2 2025-09-06 02:37:32 D:\laragon\www\project\themes\default\layout.index.html 000165527 */ ?>
 <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
     <!--begin::Toolbar-->
     <div id="kt_app_toolbar" class="app-toolbar py-6">
