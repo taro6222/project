@@ -1,4 +1,4 @@
-<?php /* Tplus 1.1.3-p2 2025-09-07 12:33:07 D:\Laragon\www\project\themes\default\layout.index.html 000165527 */ ?>
+<?php /* Tplus 1.1.3-p2 2025-09-07 12:33:07 D:\Laragon\www\project\themes\backend\backend.index.html 000165560 */ ?>
 <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
     <!--begin::Toolbar-->
     <div id="kt_app_toolbar" class="app-toolbar py-6">
@@ -80,7 +80,7 @@
                                     <!--begin::Card-->
                                     <div class="card card-stretch">
                                         <!--begin::Link-->
-                                        <a href="/user/list"
+                                        <a href="/backend/user/list"
                                             class="btn btn-flex btn-text-gray-800 btn-icon-gray-400 btn-active-color-primary bg-body flex-column justfiy-content-start align-items-start text-start w-100 p-10">
                                             <i class="ki-outline ki-gift fs-2tx mb-5 ms-n1"></i>
                                             <span class="fs-4 fw-bold">모든 사용자</span>
@@ -95,7 +95,7 @@
                                     <!--begin::Card-->
                                     <div class="card card-stretch">
                                         <!--begin::Link-->
-                                        <a href="/shop"
+                                        <a href="/backend/shop"
                                             class="btn btn-flex btn-text-gray-800 btn-icon-gray-400 btn-active-color-primary bg-body flex-column justfiy-content-start align-items-start text-start w-100 p-10">
                                             <i class="ki-outline ki-technology-2 fs-2tx mb-5 ms-n1"></i>
                                             <span class="fs-4 fw-bold">쇼핑몰</span>
@@ -110,7 +110,7 @@
                                     <!--begin::Card-->
                                     <div class="card card-stretch">
                                         <!--begin::Link-->
-                                        <a href="/shopProduct/list"
+                                        <a href="/backend/shopProduct/list"
                                             class="btn btn-flex btn-text-gray-800 btn-icon-gray-400 btn-active-color-primary bg-body flex-column justfiy-content-start align-items-start text-start w-100 p-10">
                                             <i class="ki-outline ki-fingerprint-scanning fs-2tx mb-5 ms-n1"></i>
                                             <span class="fs-4 fw-bold">eCommerce</span>
@@ -125,7 +125,7 @@
                                     <!--begin::Card-->
                                     <div class="card card-stretch">
                                         <!--begin::Link-->
-                                        <a href="/shopCategory/list"
+                                        <a href="/backend/shopCategory/list"
                                             class="btn btn-flex btn-text-gray-800 btn-icon-gray-400 btn-active-color-primary bg-body flex-column justfiy-content-start align-items-start text-start w-100 p-10">
                                             <i class="ki-outline ki-abstract-26 fs-2tx mb-5 ms-n1"></i>
                                             <span class="fs-4 fw-bold">ShopCategory</span>

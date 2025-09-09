@@ -24,7 +24,7 @@ class Layout extends MX_Controller
 		$data = [
 			//'IS_LOGON', $this->auth->loggedin()
 		];
-		$this->template->display('default/layout.index.html', $data);
+		$this->template->display($data);
 	}
 
 

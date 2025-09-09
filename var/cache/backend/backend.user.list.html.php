@@ -1,4 +1,4 @@
-<?php /* Tplus 1.1.3-p2 2025-09-07 12:33:08 D:\Laragon\www\project\themes\default\user.list.html 000043131 */ ?>
+<?php /* Tplus 1.1.3-p2 2025-09-08 07:16:27 D:\Laragon\www\project\themes\backend\backend.user.list.html 000043237 */ ?>
 <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
     <!--begin::Toolbar-->
     <div id="kt_app_toolbar" class="app-toolbar py-6">
@@ -12,7 +12,7 @@
                     <ul class="breadcrumb breadcrumb-separatorless fw-semibold">
                         <!--begin::Item-->
                         <li class="breadcrumb-item text-white fw-bold lh-1">
-                            <a href="/" class="text-white text-hover-primary">
+                            <a href="/backend" class="text-white text-hover-primary">
                                 <i class="ki-outline ki-home text-gray-700 fs-6"></i>
                             </a>
                         </li>
@@ -23,7 +23,7 @@
                         </li>
                         <!--end::Item-->
                         <!--begin::Item-->
-                        <li class="breadcrumb-item text-white fw-bold lh-1">사용자</li>
+                        <li class="breadcrumb-item text-white fw-bold lh-1">사용자---</li>
                         <!--end::Item-->
                     </ul>
                     <!--end::Breadcrumb-->
@@ -86,7 +86,7 @@
                                                 class="btn btn-light-primary btn-sm">검색</button></div>
                                         <div class="d-flex justify-content-end ms-3">
                                             <a class="btn btn-light-primary btn-sm" href="javascript:void();"
-                                                onClick="$(location).attr('href', '/user/list');">리셋 </a>
+                                                onClick="$(location).attr('href', '/backend/user/list');">리셋 </a>
                                         </div>
                                     </div>
                                 </form>
@@ -137,7 +137,7 @@
                                                 <!--begin::Form-->
                                                 <form class="form" novalidate="novalidate" id="kt_modal_add_user_form"
                                                     enctype="multipart/form-data" method="post"
-                                                    action="/user/add">
+                                                    action="/backend/user/add">
                                                     <!--begin::Scroll-->
                                                     <div class="d-flex flex-column scroll-y px-5 px-lg-10"
                                                         id="kt_modal_add_user_scroll" data-kt-scroll="true"
@@ -435,7 +435,7 @@
                                         <td class="d-flex align-items-center">
                                             <!--begin:: Avatar -->
                                             <div class="symbol symbol-circle symbol-45px overflow-hidden me-3 mt-sm-2">
-                                                <a href="/user/info?key={{.user_key}}">
+                                                <a href="/backend/user/info?key={{.user_key}}">
                                                     <!--{{?.user_avatar == null}}-->
                                                     <div class="symbol-label fs-3 bg-light-danger text-danger fw-bold">
                                                         {{.user_avatar_image}}</div>
@@ -450,7 +450,7 @@
                                             <!--end::Avatar-->
                                             <!--begin::User details-->
                                             <div class="d-flex flex-column">
-                                                <a href="/user/info?key={{.user_key}}"
+                                                <a href="/backend/user/info?key={{.user_key}}"
                                                     class="text-gray-800 text-hover-primary mb-1">{{.user_name}}</a>
                                                 <span>{{.user_email}}</span>
                                             </div>
@@ -467,7 +467,7 @@
                                         </td>
                                         <td class="text-end rounded-end pe-4">
                                             <!--begin::Menu-->
-                                            <a href="/user/info?key={{.user_key}}"
+                                            <a href="/backend/user/info?key={{.user_key}}"
                                                 class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                                 <i class="ki-outline ki-pencil fs-2"></i>
                                             </a>
@@ -496,27 +496,27 @@
                                         data-kt-menu="true">
                                         <!--begin::Menu item-->
                                         <div class="menu-item px-3">
-                                            <a href="/user/list?per=5&q={{SEARCH_NAME}}&page={{CURRENT_PAGE}}"
+                                            <a href="/backend/user/list?per=5&q={{SEARCH_NAME}}&page={{CURRENT_PAGE}}"
                                                 class="menu-link px-3"> 5 </a>
                                         </div>
                                         <div class="menu-item px-3">
-                                            <a href="/user/list?per=10&q={{SEARCH_NAME}}&page={{CURRENT_PAGE}}"
+                                            <a href="/backend/user/list?per=10&q={{SEARCH_NAME}}&page={{CURRENT_PAGE}}"
                                                 class="menu-link px-3"> 10 </a>
                                         </div>
                                         <div class="menu-item px-3">
-                                            <a href="/user/list?per=20&q={{SEARCH_NAME}}&page={{CURRENT_PAGE}}"
+                                            <a href="/backend/user/list?per=20&q={{SEARCH_NAME}}&page={{CURRENT_PAGE}}"
                                                 class="menu-link px-3"> 20 </a>
                                         </div>
                                         <div class="menu-item px-3">
-                                            <a href="/user/list?per=30&q={{SEARCH_NAME}}&page={{CURRENT_PAGE}}"
+                                            <a href="/backend/user/list?per=30&q={{SEARCH_NAME}}&page={{CURRENT_PAGE}}"
                                                 class="menu-link px-3"> 30 </a>
                                         </div>
                                         <div class="menu-item px-3">
-                                            <a href="/user/list?per=50&q={{SEARCH_NAME}}&page={{CURRENT_PAGE}}"
+                                            <a href="/backend/user/list?per=50&q={{SEARCH_NAME}}&page={{CURRENT_PAGE}}"
                                                 class="menu-link px-3"> 50 </a>
                                         </div>
                                         <div class="menu-item px-3">
-                                            <a href="/user/list?per=100&q={{SEARCH_NAME}}&page={{CURRENT_PAGE}}"
+                                            <a href="/backend/user/list?per=100&q={{SEARCH_NAME}}&page={{CURRENT_PAGE}}"
                                                 class="menu-link px-3"> 100 </a>
                                         </div>
                                         <!--end::Menu item-->

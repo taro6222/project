@@ -22,9 +22,9 @@ class Backend extends MX_Controller
 		//? Template --
 		//! Template --
 		//@ Template --
-		$this->load->library('validation');
+		//$this->load->library('validation');
 		$this->load->library('template');
-		$this->template->adminDisplay();
+		$this->template->display();
 
 		//echo $this->uri->uri_string();
 

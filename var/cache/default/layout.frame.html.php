@@ -1,4 +1,4 @@
-<?php /* Tplus 1.1.3-p2 2025-09-06 19:09:41 D:\laragon\www\project\themes\default\layout.frame.html 000610039 */ ?>
+<?php /* Tplus 1.1.3-p2 2025-09-07 12:33:07 D:\Laragon\www\project\themes\default\layout.frame.html 000610039 */ ?>
 <!DOCTYPE html>
 <html lang="en">
     <!--begin::Head-->
@@ -3596,7 +3596,7 @@
                 <!--end::Header-->
                 <!--begin::Wrapper-->
 
-                <?=$V['content'] /*{"line":3598,"code":"[=content]"}*/?>
+                <?=$V['content'] /*{"line":5745,"code":"[=content]"}*/?>
 
                 <!--end::Wrapper-->
                 <!--begin::Footer-->
