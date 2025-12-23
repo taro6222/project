@@ -1,6 +1,6 @@
 <?php if  ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Group extends MX_Controller
+class Shop extends MX_Controller
 {
 
 	// --------------------------------------------------------------------
@@ -14,29 +14,21 @@ class Group extends MX_Controller
 
 	function index()
 	{
-		echo '-->user';
+		$this->load->library('template');
+		//$this->template->assign('community_name', $community_name);
+		$this->template->display();
 	}
 
-	function list()
+	function config()
 	{
 		$this->load->library('template');
 		//$this->template->assign('community_name', $community_name);
 		$this->template->display();
 	}
 
-	function info()
-	{
-		$this->load->library('template');
-		//$this->template->assign('community_name', $community_name);
-		$this->template->display();
-	}
 
-	function permissions()
-	{
-		$this->load->library('template');
-		//$this->template->assign('community_name', $community_name);
-		$this->template->display();
-	}
+
+
 
 
 

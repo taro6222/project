@@ -66,12 +66,12 @@ class Template extends Tpl
 
 		$source = str_replace( "__assets", '/themes/' . $this->templateDirectory() . '/__assets', $source );
 		$source = str_replace( "__image",  '/themes/' . $this->templateDirectory() . '/__image',  $source );
-		$source = str_replace( "__style",  '/themes/' . $this->templateDirectory() . '/__style',  $source  );
-		$source = str_replace( "__script", '/themes/' . $this->templateDirectory() . '/__script', $source  );
-		$source = str_replace( "__common", '/themes/' . $this->templateDirectory() . '/__common', $source  );
-		$source = str_replace( "__plugin", '/themes/' . $this->templateDirectory() . '/__plugin', $source  );
-		$source = str_replace( "__media",  '/themes/' . $this->templateDirectory() . '/__media',  $source  );
-		$source = str_replace( "__manager",'/themes/' . $this->templateDirectory() . '/__manager',$source  );
+		$source = str_replace( "__style",  '/themes/' . $this->templateDirectory() . '/__style',  $source );
+		$source = str_replace( "__script", '/themes/' . $this->templateDirectory() . '/__script', $source );
+		$source = str_replace( "__common", '/themes/' . $this->templateDirectory() . '/__common', $source );
+		$source = str_replace( "__plugin", '/themes/' . $this->templateDirectory() . '/__plugin', $source );
+		$source = str_replace( "__media",  '/themes/' . $this->templateDirectory() . '/__media',  $source );
+		$source = str_replace( "__manager",'/themes/' . $this->templateDirectory() . '/__manager',$source );
 
 		echo $source;//$mainContents = $this->get($path, $data);
 		//echo Modules::run('backend/'.$frame_file, $mainContents);

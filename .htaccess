@@ -3,8 +3,9 @@ SetEnv CI_ENV development
 <IfModule mod_rewrite.c>
 	RewriteEngine On
 	RewriteBase /
-	RewriteRule (.env) [F]
-	RewriteCond $1 !^(index\.php|themes|var|robots\.txt)$
+	Options +FollowSymLinks
+	RewriteCond $1 !^(index\.php|themes|var|robots\.txt|.env)$
+	RewriteRule ^index\.php$ - [L]
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteRule ^(.*)$ /index.php/$1 [L]
