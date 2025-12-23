@@ -9,7 +9,7 @@ class Layout extends MX_Controller
 
 
 	/**
-	 * index
+	 * index layout
 	 *
 	 * @return void
 	 */
