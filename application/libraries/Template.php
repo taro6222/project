@@ -54,7 +54,7 @@ class Template extends Tpl
 			$frame_file = 'layout.frame.html';
 		}
 
-		//echo $this->currentModule();
+		//echo $this->currentModule();+
 		$path = $this->templateFile($this->currentModule());
 
 		$page = Tpl::get($path, $data);
@@ -65,6 +65,7 @@ class Template extends Tpl
 		$source = Tpl::get($this->templateDirectory() . '/'. $frame_file, $main);
 
 		$source = str_replace( "__assets", '/themes/' . $this->templateDirectory() . '/__assets', $source );
+		$source = str_replace( "__vendors", '/themes/' . $this->templateDirectory() . '/__vendors', $source );
 		$source = str_replace( "__image",  '/themes/' . $this->templateDirectory() . '/__image',  $source );
 		$source = str_replace( "__style",  '/themes/' . $this->templateDirectory() . '/__style',  $source );
 		$source = str_replace( "__script", '/themes/' . $this->templateDirectory() . '/__script', $source );
