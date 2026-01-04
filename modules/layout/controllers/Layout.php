@@ -20,7 +20,7 @@ class Layout extends MX_Controller
 
 		//Template -------------------------------------------
 		$this->load->library('template');
-		$this->template->module = 'index';
+
 		$data = [
 			//'IS_LOGON', $this->auth->loggedin()
 		];
@@ -38,13 +38,13 @@ class Layout extends MX_Controller
 	{
 
 		$this->load->library('template');
-		$this->template->module = 'layout';
 
 		$data = [
-			//'MAIN_CONTENTS', $mainContents,
+			"content" => $mainContents,
+			"title" => "ok",
 		];
 
-		$this->template->display('default/layout.frame.html', $data);
+		$this->template->framePrint($data);
 	}
 
 

@@ -42,40 +42,47 @@ class Template extends Tpl
 		return array_merge(parent::config(), [
 		'HtmlRoot'			=> './themes/', //$this->config['HtmlRoot']
 		'HtmlScriptRoot'	=> './var/cache/',
+		'ScriptCheck'=> true,
+		'AssignCheck'=> true
 		]);
+	}
+
+	public static function get($path, $data = [])
+	{
+		return Tpl::get($path, $data);
 	}
 
 	public function display($data=[])
 	{
-		if ($this->isAdminModule()) {
-			$frame_file = 'backend.frame.html';
-		}
-		else {
-			$frame_file = 'layout.frame.html';
-		}
-
 		//echo $this->currentModule();+
-		$path = $this->templateFile($this->currentModule());
+		//$path = $this->templateFile($this->currentModule());
 
-		$page = Tpl::get($path, $data);
-		$main = [
-			'content'=>$page,
-		];
+		$currentModule = $this->currentModule() . '.' . $this->CI->router->fetch_method() . '.html';
+		$path = $this->templateDirectory() . '/'. $currentModule;
+		$content = $this->get($path, $data);
+		//$content = '';
 
-		$source = Tpl::get($this->templateDirectory() . '/'. $frame_file, $main);
+		//echo $source;//$mainContents = $this->get($path, $data);
+		echo Modules::run('layout/frame', $content);
+	}
 
-		$source = str_replace( "__assets", '/themes/' . $this->templateDirectory() . '/__assets', $source );
-		$source = str_replace( "__vendors", '/themes/' . $this->templateDirectory() . '/__vendors', $source );
-		$source = str_replace( "__image",  '/themes/' . $this->templateDirectory() . '/__image',  $source );
-		$source = str_replace( "__style",  '/themes/' . $this->templateDirectory() . '/__style',  $source );
-		$source = str_replace( "__script", '/themes/' . $this->templateDirectory() . '/__script', $source );
-		$source = str_replace( "__common", '/themes/' . $this->templateDirectory() . '/__common', $source );
-		$source = str_replace( "__plugin", '/themes/' . $this->templateDirectory() . '/__plugin', $source );
-		$source = str_replace( "__media",  '/themes/' . $this->templateDirectory() . '/__media',  $source );
-		$source = str_replace( "__manager",'/themes/' . $this->templateDirectory() . '/__manager',$source );
+	public function framePrint($data)
+	{
+		//$this->template->display('default/layout.frame.html', $data);
+		$path = $this->templateDirectory();
+		echo $path;
+		$source = $this->get($path . '/layout.frame.html', $data);
 
-		echo $source;//$mainContents = $this->get($path, $data);
-		//echo Modules::run('backend/'.$frame_file, $mainContents);
+		$source = str_replace( "__assets", '/themes/' . $path . '/__assets',  $source );
+		$source = str_replace( "__vendors", '/themes/'. $path . '/__vendors', $source );
+		$source = str_replace( "__image",  '/themes/' . $path . '/__image',   $source );
+		$source = str_replace( "__style",  '/themes/' . $path . '/__style',   $source );
+		$source = str_replace( "__script", '/themes/' . $path . '/__script',  $source );
+		$source = str_replace( "__common", '/themes/' . $path . '/__common',  $source );
+		$source = str_replace( "__plugin", '/themes/' . $path . '/__plugin',  $source );
+		$source = str_replace( "__media",  '/themes/' . $path . '/__media',   $source );
+		$source = str_replace( "__manager",'/themes/' . $path . '/__manager', $source );
+		echo $source;
 	}
 
 	/**
