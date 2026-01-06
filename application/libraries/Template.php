@@ -1,10 +1,11 @@
 <?php
 
-if (!defined('BASEPATH')) exit('No direct script access allowed');
+if (!defined('BASEPATH'))
+	exit('No direct script access allowed');
 
 // ------------------------------------------------------------------------
 
-require_once (APPPATH . 'libraries/Tplus/Tpl.php');
+require_once(APPPATH . 'libraries/Tplus/Tpl.php');
 
 /**
  * Template
@@ -38,12 +39,13 @@ class Template extends Tpl
 		//$this->define($currentModule, $file);
 	}
 
-	protected static function config() {
+	protected static function config()
+	{
 		return array_merge(parent::config(), [
-		'HtmlRoot'			=> './themes/', //$this->config['HtmlRoot']
-		'HtmlScriptRoot'	=> './var/cache/',
-		'ScriptCheck'=> true,
-		'AssignCheck'=> true
+			'HtmlRoot' => './themes/', //$this->config['HtmlRoot']
+			'HtmlScriptRoot' => './var/cache/',
+			'ScriptCheck' => true,
+			'AssignCheck' => true
 		]);
 	}
 
@@ -52,13 +54,13 @@ class Template extends Tpl
 		return Tpl::get($path, $data);
 	}
 
-	public function display($data=[])
+	public function display($data = [])
 	{
 		//echo $this->currentModule();+
 		//$path = $this->templateFile($this->currentModule());
 
 		$currentModule = $this->currentModule() . '.' . $this->CI->router->fetch_method() . '.html';
-		$path = $this->templateDirectory() . '/'. $currentModule;
+		$path = $this->templateDirectory() . '/' . $currentModule;
 		$content = $this->get($path, $data);
 		//$content = '';
 
@@ -70,18 +72,18 @@ class Template extends Tpl
 	{
 		//$this->template->display('default/layout.frame.html', $data);
 		$path = $this->templateDirectory();
-		echo $path;
+
 		$source = $this->get($path . '/layout.frame.html', $data);
 
-		$source = str_replace( "__assets", '/themes/' . $path . '/__assets',  $source );
-		$source = str_replace( "__vendors", '/themes/'. $path . '/__vendors', $source );
-		$source = str_replace( "__image",  '/themes/' . $path . '/__image',   $source );
-		$source = str_replace( "__style",  '/themes/' . $path . '/__style',   $source );
-		$source = str_replace( "__script", '/themes/' . $path . '/__script',  $source );
-		$source = str_replace( "__common", '/themes/' . $path . '/__common',  $source );
-		$source = str_replace( "__plugin", '/themes/' . $path . '/__plugin',  $source );
-		$source = str_replace( "__media",  '/themes/' . $path . '/__media',   $source );
-		$source = str_replace( "__manager",'/themes/' . $path . '/__manager', $source );
+		$source = str_replace("__assets", '/themes/' . $path . '/__assets', $source);
+		$source = str_replace("__vendors", '/themes/' . $path . '/__vendors', $source);
+		$source = str_replace("__image", '/themes/' . $path . '/__image', $source);
+		$source = str_replace("__style", '/themes/' . $path . '/__style', $source);
+		$source = str_replace("__script", '/themes/' . $path . '/__script', $source);
+		$source = str_replace("__common", '/themes/' . $path . '/__common', $source);
+		$source = str_replace("__plugin", '/themes/' . $path . '/__plugin', $source);
+		$source = str_replace("__media", '/themes/' . $path . '/__media', $source);
+		$source = str_replace("__manager", '/themes/' . $path . '/__manager', $source);
 		echo $source;
 	}
 
@@ -94,10 +96,10 @@ class Template extends Tpl
 	{
 		$module = ($this->CI->uri->segment(1) == '') ? $this->CI->uri->rsegment(1) : $this->CI->uri->segment(1);
 
-		if ( $this->isAdminModule() ) {
+		if ($this->isAdminModule()) {
 			$module = 'backend';
 
-			if ( $this->CI->uri->segment(2) != '' ) {
+			if ($this->CI->uri->segment(2) != '') {
 				$module = $module . '/' . $this->CI->uri->segment(2);
 			}
 		}
@@ -115,19 +117,17 @@ class Template extends Tpl
 	{
 		if ($currentModule == $this->CI->router->fetch_class()) {
 			$ret = env('THEME_SITE') . '/' . $currentModule . '.' . $this->CI->router->fetch_method() . '.html';
-		}
-		else {
+		} else {
 			$ret = env('THEME_SITE') . '/' . $currentModule . '.' . $this->CI->router->fetch_class() . '.' . $this->CI->router->fetch_method() . '.html';
 		}
 
-		if ( $this->isAdminModule() ) {
+		if ($this->isAdminModule()) {
 			$ret = env('THEME_BACKEND') . '/backend.' . $this->CI->router->fetch_method() . '.html';
 
-			if ( $this->CI->uri->segment(3) != '' ) {
-				$ret = env('THEME_BACKEND').'/backend.' . $this->CI->router->fetch_class() . '.' . $this->CI->router->fetch_method() . '.html';
-			}
-			else if ( $this->CI->uri->segment(2) != '' ) {
-				$ret = env('THEME_BACKEND').'/backend.' . $this->CI->router->fetch_method() . '.html';
+			if ($this->CI->uri->segment(3) != '') {
+				$ret = env('THEME_BACKEND') . '/backend.' . $this->CI->router->fetch_class() . '.' . $this->CI->router->fetch_method() . '.html';
+			} else if ($this->CI->uri->segment(2) != '') {
+				$ret = env('THEME_BACKEND') . '/backend.' . $this->CI->router->fetch_method() . '.html';
 			}
 		}
 
@@ -145,7 +145,7 @@ class Template extends Tpl
 		//$MX = new MX_Controller();
 
 		$theme = env('THEME_SITE');
-		if ( $this->isAdminModule() ) {
+		if ($this->isAdminModule()) {
 			$theme = env('THEME_BACKEND');
 
 		}
@@ -161,7 +161,7 @@ class Template extends Tpl
 	function isAdminModule()
 	{
 		$ret = false;
-		if ( $this->CI->uri->segment(1) == 'backend' ) {
+		if ($this->CI->uri->segment(1) == 'backend') {
 			$ret = true;
 		}
 		return $ret;
