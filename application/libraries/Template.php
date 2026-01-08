@@ -94,7 +94,7 @@ class Template extends Tpl
 	 */
 	public function currentModule()
 	{
-		$module = ($this->CI->uri->segment(1) == '') ? $this->CI->uri->rsegment(1) : $this->CI->uri->segment(1);
+		$module = ($this->CI->uri->segment(1) == '') ? $this->CI->uri->rsegment(1) : $this->CI->uri->segment(1) . '.' . $this->CI->router->fetch_class();
 
 		if ($this->isAdminModule()) {
 			$module = 'backend';
