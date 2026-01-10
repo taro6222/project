@@ -1,136 +1,253 @@
-
-        <nav class="mb-3" aria-label="breadcrumb">
-          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="#!">Page 1</a></li>
-            <li class="breadcrumb-item"><a href="#!">Page 2</a></li>
-            <li class="breadcrumb-item active">Default</li>
-          </ol>
-        </nav>
-        <div class="mb-9">
-          <div class="row g-3 mb-4">
-            <div class="col-auto">
-              <h2 class="mb-0">작업 지시서</h2>
+<nav class="mb-3" aria-label="breadcrumb">
+  <ol class="breadcrumb mb-0">
+    <li class="breadcrumb-item"><a href="#!">Page 1</a></li>
+    <li class="breadcrumb-item"><a href="#!">Page 2</a></li>
+    <li class="breadcrumb-item active">Default</li>
+  </ol>
+</nav>
+<div class="mb-9">
+  <div class="row g-3 mb-4">
+    <div class="col-auto">
+      <h2 class="mb-0">작업 지시서</h2>
+    </div>
+  </div>
+  <ul class="nav nav-links mb-3 mb-lg-2 mx-n3">
+    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#"><span>All </span><span
+          class="text-body-tertiary fw-semibold">(68817)</span></a></li>
+    <li class="nav-item"><a class="nav-link" href="#"><span>Published </span><span
+          class="text-body-tertiary fw-semibold">(70348)</span></a></li>
+    <li class="nav-item"><a class="nav-link" href="#"><span>Drafts </span><span
+          class="text-body-tertiary fw-semibold">(17)</span></a></li>
+    <li class="nav-item"><a class="nav-link" href="#"><span>On discount </span><span
+          class="text-body-tertiary fw-semibold">(810)</span></a></li>
+  </ul>
+  <div id="products"
+    data-list='{"valueNames":["product","price","category","tags","vendor","time"],"page":10,"pagination":true}'>
+    <div class="mb-4">
+      <div class="d-flex flex-wrap gap-3">
+        <div class="search-box">
+          <form class="position-relative"><input class="form-control search-input search" type="search"
+              placeholder="Search products" aria-label="Search" />
+            <span class="fas fa-search search-box-icon"></span>
+          </form>
+        </div>
+        <div class="scrollbar overflow-hidden-y">
+          <a class="btn btn-phoenix-primary px-3 me-1 border-0 text-body"
+            href="../../apps/project-management/project-list-view.html" data-bs-toggle="tooltip" data-bs-placement="top"
+            data-bs-title="List view"><span class="fa-solid fa-list fs-10"></span></a>
+          <a class="btn btn-phoenix-primary px-3" href="../../apps/project-management/project-card-view.html"
+            data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Card view"><svg width="9" height="9"
+              viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0 0.5C0 0.223858 0.223858 0 0.5 0H3.5C3.77614 0 4 0.223858 4 0.5V3.5C4 3.77614 3.77614 4 3.5 4H0.5C0.223858 4 0 3.77614 0 3.5V0.5Z"
+                fill="currentColor"></path>
+              <path
+                d="M0 5.5C0 5.22386 0.223858 5 0.5 5H3.5C3.77614 5 4 5.22386 4 5.5V8.5C4 8.77614 3.77614 9 3.5 9H0.5C0.223858 9 0 8.77614 0 8.5V5.5Z"
+                fill="currentColor"></path>
+              <path
+                d="M5 0.5C5 0.223858 5.22386 0 5.5 0H8.5C8.77614 0 9 0.223858 9 0.5V3.5C9 3.77614 8.77614 4 8.5 4H5.5C5.22386 4 5 3.77614 5 3.5V0.5Z"
+                fill="currentColor"></path>
+              <path
+                d="M5 5.5C5 5.22386 5.22386 5 5.5 5H8.5C8.77614 5 9 5.22386 9 5.5V8.5C9 8.77614 8.77614 9 8.5 9H5.5C5.22386 9 5 8.77614 5 8.5V5.5Z"
+                fill="currentColor"></path>
+            </svg></a>
+        </div>
+        <div class="ms-xxl-auto"><button class="btn btn-link text-body me-4 px-0"><span
+              class="fa-solid fa-file-export fs-9 me-2"></span>Export</button>
+          <button class="btn btn-primary mb-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight"><span class="fas fa-plus me-2"></span>Add work</button>
+          <div class="offcanvas offcanvas-end" id="offcanvasRight" data-bs-scroll="true" tabindex="-1" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+              <h5 id="offcanvasRightLabel">Offcanvas right</h5><button class="btn-close text-reset" type="button"
+                data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-          </div>
-          <ul class="nav nav-links mb-3 mb-lg-2 mx-n3">
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#"><span>All </span><span class="text-body-tertiary fw-semibold">(68817)</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="#"><span>Published </span><span class="text-body-tertiary fw-semibold">(70348)</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="#"><span>Drafts </span><span class="text-body-tertiary fw-semibold">(17)</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="#"><span>On discount </span><span class="text-body-tertiary fw-semibold">(810)</span></a></li>
-          </ul>
-          <div id="products" data-list='{"valueNames":["product","price","category","tags","vendor","time"],"page":10,"pagination":true}'>
-            <div class="mb-4">
-              <div class="d-flex flex-wrap gap-3">
-                <div class="search-box">
-                  <form class="position-relative"><input class="form-control search-input search" type="search" placeholder="Search products" aria-label="Search" />
-                    <span class="fas fa-search search-box-icon"></span>
-                  </form>
-                </div>
-                <div class="scrollbar overflow-hidden-y">
-                  <div class="btn-group position-static" role="group">
-                    <div class="btn-group position-static text-nowrap"><button class="btn btn-phoenix-secondary px-7 flex-shrink-0" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"> Category<span class="fas fa-angle-down ms-2"></span></button>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        <li>
-                          <hr class="dropdown-divider" />
-                        </li>
-                        <li><a class="dropdown-item" href="#">Separated link</a></li>
-                      </ul>
-                    </div>
-                    <div class="btn-group position-static text-nowrap"><button class="btn btn-sm btn-phoenix-secondary px-7 flex-shrink-0" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"> Vendor<span class="fas fa-angle-down ms-2"></span></button>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        <li>
-                          <hr class="dropdown-divider" />
-                        </li>
-                        <li><a class="dropdown-item" href="#">Separated link</a></li>
-                      </ul>
-                    </div><button class="btn btn-sm btn-phoenix-secondary px-7 flex-shrink-0">More filters</button>
-                  </div>
-                </div>
-                <div class="ms-xxl-auto"><button class="btn btn-link text-body me-4 px-0"><span class="fa-solid fa-file-export fs-9 me-2"></span>Export</button>
-                  <button class="btn btn-primary" id="addBtn"><span class="fas fa-plus me-2"></span>Add product</button>
-                </div>
-              </div>
-            </div>
-            <div class="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-body-emphasis border-top border-bottom border-translucent position-relative top-1">
-              <div class="table-responsive scrollbar mx-n1 px-1">
-                <table class="table fs-9 mb-0">
-                  <thead>
-                    <tr>
-                      <th class="sort white-space-nowrap align-middle ps-4" scope="col" data-sort="product">ID</th>
-                      <th class="sort white-space-nowrap align-middle ps-4" scope="col" data-sort="product">상태</th>
-                      <th class="sort white-space-nowrap align-middle ps-4" scope="col" data-sort="price">제목</th>
-                      <th class="sort align-middle ps-4" scope="col" data-sort="category">우선순위</th>
-                      <th class="sort align-middle ps-4" scope="col" data-sort="tags">설명</th>
-                      <th class="sort align-middle ps-4" scope="col">담당자</th>
-                      <th class="sort align-middle ps-4" scope="col" data-sort="vendor" style="width:10%">위치이름</th>
-                      <th class="sort align-middle ps-4" scope="col" data-sort="time" style="width:50px;">위치 주소</th>
-                      <th class="sort align-middle ps-4" scope="col" data-sort="time" style="width:50px;">범주</th>
-                      <th class="sort align-middle ps-4" scope="col" data-sort="time" style="width:50px;">자산명</th>
-                      <th class="sort align-middle ps-4" scope="col" data-sort="time" style="width:50px;">마감일</th>
-                      <th class="sort align-middle ps-4" scope="col" data-sort="time" style="width:50px;">경과일</th>
-                      <th class="sort align-middle ps-4" scope="col" data-sort="time" style="width:50px;">파일</th>
-                      <th class="sort align-middle ps-4" scope="col" data-sort="time" style="width:50px;">요청자</th>
-                      <th class="sort align-middle ps-4" scope="col" data-sort="time" style="width:50px;">완료일</th>
-                      <th class="sort align-middle ps-4" scope="col" data-sort="time" style="width:50px;">업데이트</th>
-                      <th class="sort align-middle ps-4" scope="col" data-sort="time" style="width:50px;">생성일</th>
-                      <th class="sort text-end align-middle pe-0 ps-4" scope="col"></th>
-                    </tr>
-                  </thead>
-                  <tbody class="list" id="products-table-body">
-                    <tr class="position-static">
-                      <td class="align-middle white-space-nowrap review ps-4">WO000001</div></td>
-                      <td class="product align-middle white-space-nowrap ps-4"><a class="fw-semibold line-clamp-3 mb-0" href="../../../apps/e-commerce/landing/product-details.html">진행 중</a></td>
-                      <td class="price align-middle white-space-nowrap fw-bold text-body-tertiary ps-4">냉난방기 점검</td>
-                      <td class="category align-middle white-space-nowrap text-body-quaternary fs-9 ps-4 fw-semibold">낮음</td>
-                      <td class="tags align-middle white-space-nowrap review pb-2 ps-3">작동 안됨</td>
-                      <td class="align-middle white-space-nowrap review ps-4">홍길동</div></td>
-                      <td class="vendor align-middle white-space-nowrap text-start fw-semibold ps-4"><a href="#!">부속동</a></td>
-                      <td class="time align-middle white-space-nowrap text-body-tertiary text-opacity-85 ps-4">경기도 화성시 양감면 은행나무로 62번길 37-9</td>
-                      <td class="align-middle white-space-nowrap review ps-4">냉난방</div></td>
-                      <td class="align-middle white-space-nowrap review ps-4">HVAC-001</div></td>
-                      <td class="align-middle white-space-nowrap review ps-4">2026-01-09 22:53</div></td>
-                      <td class="align-middle white-space-nowrap review ps-4">2일 전</div></td>
-                      <td class="align-middle white-space-nowrap review ps-4">2</div></td>
-                      <td class="align-middle white-space-nowrap review ps-4">마동탁</div></td>
-                      <td class="align-middle white-space-nowrap review ps-4">2026-01-09 22:53</div></td>
-                      <td class="align-middle white-space-nowrap review ps-4">2026-01-09 22:53</div></td>
-                      <td class="align-middle white-space-nowrap review ps-4">2026-01-09 22:53</div></td>
-                      <td class="align-middle white-space-nowrap text-end pe-0 ps-4 btn-reveal-trigger">
-                        <div class="btn-reveal-trigger position-static"><button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs-10" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs-10"></span></button>
-                          <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
-                            <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="row align-items-center justify-content-between py-2 pe-0 fs-9">
-                <div class="col-auto d-flex">
-                  <p class="mb-0 d-none d-sm-block me-3 fw-semibold text-body" data-list-info="data-list-info"></p><a class="fw-semibold" href="#!" data-list-view="*">View all<span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a><a class="fw-semibold d-none" href="#!" data-list-view="less">View Less<span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
-                </div>
-                <div class="col-auto d-flex"><button class="page-link" data-list-pagination="prev"><span class="fas fa-chevron-left"></span></button>
-                  <ul class="mb-0 pagination"></ul><button class="page-link pe-0" data-list-pagination="next"><span class="fas fa-chevron-right"></span></button>
-                </div>
-              </div>
-            </div>
+            <div class="offcanvas-body">...</div>
           </div>
         </div>
-        <footer class="footer position-absolute">
-          <div class="row g-0 justify-content-between align-items-center h-100">
-            <div class="col-12 col-sm-auto text-center">
-              <p class="mb-0 mt-2 mt-sm-0 text-body">Thank you for creating with Phoenix<span class="d-none d-sm-inline-block"></span><span class="d-none d-sm-inline-block mx-1">|</span><br class="d-sm-none" />2025 &copy;<a class="mx-1" href="https://themewagon.com">Themewagon</a></p>
-            </div>
-            <div class="col-12 col-sm-auto text-center">
-              <p class="mb-0 text-body-tertiary text-opacity-85">v1.24.0</p>
-            </div>
-          </div>
-        </footer>
       </div>
+      <div
+        class="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-body-emphasis border-top border-bottom border-translucent position-relative top-1">
+        <div class="table-responsive scrollbar mx-n1 px-1">
+          <table class="table fs-9 mb-0 table-hover">
+            <thead>
+              <tr>
+                <th class="sort white-space-nowrap align-middle ps-4" scope="col" data-sort="product">ID</th>
+                <th class="sort white-space-nowrap align-middle ps-4" scope="col" data-sort="product">상태</th>
+                <th class="sort white-space-nowrap align-middle ps-4" scope="col" data-sort="price" style="width:30%">제목</th>
+                <th class="sort align-middle ps-4" scope="col" data-sort="category">우선순위</th>
+                <th class="sort align-middle ps-4" scope="col" data-sort="tags" style="width:30%">설명</th>
+                <th class="sort align-middle ps-4" scope="col">담당자</th>
+                <th class="sort align-middle ps-4" scope="col" data-sort="vendor">위치이름</th>
+                <th class="sort align-middle ps-4" scope="col" data-sort="time">범주</th>
+                <th class="sort align-middle ps-4" scope="col" data-sort="time">자산명</th>
+                <th class="sort align-middle ps-4" scope="col" data-sort="time">마감일</th>
+                <th class="sort align-middle ps-4" scope="col" data-sort="time">경과일</th>
+                <th class="sort align-middle ps-4" scope="col" data-sort="time">파일</th>
+                <th class="sort align-middle ps-4" scope="col" data-sort="time">요청자</th>
+                <th class="sort align-middle ps-4" scope="col" data-sort="time">완료일</th>
+                <th class="sort align-middle ps-4" scope="col" data-sort="time">업데이트</th>
+                <th class="sort align-middle ps-4" scope="col" data-sort="time">생성일</th>
+                <th class="sort text-end align-middle pe-0 ps-4" scope="col"></th>
+              </tr>
+            </thead>
+            <tbody class="list" id="products-table-body">
+              <tr class="position-static">
+                <td class="align-middle white-space-nowrap review ps-4">WO000001
+        </div>
+        </td>
+        <td class="product align-middle white-space-nowrap ps-4"><a class="fw-semibold line-clamp-3 mb-0"
+            href="../../../apps/e-commerce/landing/product-details.html">진행 중</a></td>
+        <td class="price align-middle white-space-nowrap fw-bold text-body-tertiary ps-4">냉난방기 점검</td>
+        <td class="category align-middle white-space-nowrap text-body-quaternary fs-9 ps-4 fw-semibold">낮음</td>
+        <td class="tags align-middle white-space-nowrap review pb-2 ps-3">작동 안됨</td>
+        <td class="align-middle white-space-nowrap review ps-4">홍길동
+      </div>
+      </td>
+      <td class="vendor align-middle white-space-nowrap text-start fw-semibold ps-4"><a href="#!">부속동</a></td>
+      <td class="align-middle white-space-nowrap review ps-4">냉난방
+    </div>
+    </td>
+    <td class="align-middle white-space-nowrap review ps-4">HVAC-001
+  </div>
+  </td>
+  <td class="align-middle white-space-nowrap review ps-4">2026-01-09 22:53
+</div>
+</td>
+<td class="align-middle white-space-nowrap review ps-4">2일 전</div>
+</td>
+<td class="align-middle white-space-nowrap review ps-4">2</div>
+</td>
+<td class="align-middle white-space-nowrap review ps-4">마동탁</div>
+</td>
+<td class="align-middle white-space-nowrap review ps-4">2026-01-09</div>
+</td>
+<td class="align-middle white-space-nowrap review ps-4">2026-01-09 22:53</div>
+</td>
+<td class="align-middle white-space-nowrap review ps-4">2026-01-09 22:53</div>
+</td>
+<td class="align-middle white-space-nowrap text-end pe-0 ps-4 btn-reveal-trigger">
+  <div class="btn-reveal-trigger position-static"><button
+      class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs-10" type="button"
+      data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false"
+      data-bs-reference="parent"><span class="fas fa-ellipsis-h fs-10"></span></button>
+    <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a
+        class="dropdown-item" href="#!">Export</a>
+      <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
+    </div>
+  </div>
+</td>
+</tr>
+<tr class="position-static">
+  <td class="align-middle white-space-nowrap review ps-4">WO000001</div>
+  </td>
+  <td class="product align-middle white-space-nowrap ps-4"><a class="fw-semibold line-clamp-3 mb-0"
+      href="../../../apps/e-commerce/landing/product-details.html">진행 중</a></td>
+  <td class="price align-middle white-space-nowrap fw-bold text-body-tertiary ps-4">냉난방기 점검</td>
+  <td class="category align-middle white-space-nowrap text-body-quaternary fs-9 ps-4 fw-semibold">낮음</td>
+  <td class="tags align-middle white-space-nowrap review pb-2 ps-3">작동 안됨</td>
+  <td class="align-middle white-space-nowrap review ps-4">홍길동</div>
+  </td>
+  <td class="vendor align-middle white-space-nowrap text-start fw-semibold ps-4"><a href="#!">부속동</a></td>
+  <td class="align-middle white-space-nowrap review ps-4">냉난방</div>
+  </td>
+  <td class="align-middle white-space-nowrap review ps-4">HVAC-001</div>
+  </td>
+  <td class="align-middle white-space-nowrap review ps-4">2026-01-09 22:53</div>
+  </td>
+  <td class="align-middle white-space-nowrap review ps-4">2일 전</div>
+  </td>
+  <td class="align-middle white-space-nowrap review ps-4">2</div>
+  </td>
+  <td class="align-middle white-space-nowrap review ps-4">마동탁</div>
+  </td>
+  <td class="align-middle white-space-nowrap review ps-4">2026-01-09</div>
+  </td>
+  <td class="align-middle white-space-nowrap review ps-4">2026-01-09 22:53</div>
+  </td>
+  <td class="align-middle white-space-nowrap review ps-4">2026-01-09 22:53</div>
+  </td>
+  <td class="align-middle white-space-nowrap text-end pe-0 ps-4 btn-reveal-trigger">
+    <div class="btn-reveal-trigger position-static"><button
+        class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs-10" type="button"
+        data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false"
+        data-bs-reference="parent"><span class="fas fa-ellipsis-h fs-10"></span></button>
+      <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a
+          class="dropdown-item" href="#!">Export</a>
+        <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
+      </div>
+    </div>
+  </td>
+</tr>
+<tr class="position-static">
+  <td class="align-middle white-space-nowrap review ps-4">WO000001</div>
+  </td>
+  <td class="product align-middle white-space-nowrap ps-4"><a class="fw-semibold line-clamp-3 mb-0"
+      href="../../../apps/e-commerce/landing/product-details.html">진행 중</a></td>
+  <td class="price align-middle white-space-nowrap fw-bold text-body-tertiary ps-4">냉난방기 점검</td>
+  <td class="category align-middle white-space-nowrap text-body-quaternary fs-9 ps-4 fw-semibold">낮음</td>
+  <td class="tags align-middle white-space-nowrap review pb-2 ps-3">작동 안됨</td>
+  <td class="align-middle white-space-nowrap review ps-4">홍길동</div>
+  </td>
+  <td class="vendor align-middle white-space-nowrap text-start fw-semibold ps-4"><a href="#!">부속동</a></td>
+  <td class="align-middle white-space-nowrap review ps-4">냉난방</div>
+  </td>
+  <td class="align-middle white-space-nowrap review ps-4">HVAC-001</div>
+  </td>
+  <td class="align-middle white-space-nowrap review ps-4">2026-01-09 22:53</div>
+  </td>
+  <td class="align-middle white-space-nowrap review ps-4">2일 전</div>
+  </td>
+  <td class="align-middle white-space-nowrap review ps-4">2</div>
+  </td>
+  <td class="align-middle white-space-nowrap review ps-4">마동탁</div>
+  </td>
+  <td class="align-middle white-space-nowrap review ps-4">2026-01-09</div>
+  </td>
+  <td class="align-middle white-space-nowrap review ps-4">2026-01-09 22:53</div>
+  </td>
+  <td class="align-middle white-space-nowrap review ps-4">2026-01-09 22:53</div>
+  </td>
+  <td class="align-middle white-space-nowrap text-end pe-0 ps-4 btn-reveal-trigger">
+    <div class="btn-reveal-trigger position-static"><button
+        class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs-10" type="button"
+        data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false"
+        data-bs-reference="parent"><span class="fas fa-ellipsis-h fs-10"></span></button>
+      <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a
+          class="dropdown-item" href="#!">Export</a>
+        <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
+      </div>
+    </div>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="row align-items-center justify-content-between py-2 pe-0 fs-9">
+  <div class="col-auto d-flex">
+    <p class="mb-0 d-none d-sm-block me-3 fw-semibold text-body" data-list-info="data-list-info"></p><a
+      class="fw-semibold" href="#!" data-list-view="*">View all<span class="fas fa-angle-right ms-1"
+        data-fa-transform="down-1"></span></a><a class="fw-semibold d-none" href="#!" data-list-view="less">View
+      Less<span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a>
+  </div>
+  <div class="col-auto d-flex"><button class="page-link" data-list-pagination="prev"><span
+        class="fas fa-chevron-left"></span></button>
+    <ul class="mb-0 pagination"></ul><button class="page-link pe-0" data-list-pagination="next"><span
+        class="fas fa-chevron-right"></span></button>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<footer class="footer position-absolute">
+  <div class="row g-0 justify-content-between align-items-center h-100">
+    <div class="col-12 col-sm-auto text-center">
+      <p class="mb-0 mt-2 mt-sm-0 text-body">Thank you for creating with Phoenix<span
+          class="d-none d-sm-inline-block"></span><span class="d-none d-sm-inline-block mx-1">|</span><br
+          class="d-sm-none" />2025 &copy;<a class="mx-1" href="https://themewagon.com">Themewagon</a></p>
+    </div>
+    <div class="col-12 col-sm-auto text-center">
+      <p class="mb-0 text-body-tertiary text-opacity-85">v1.24.0</p>
+    </div>
+  </div>
+</footer>
+</div>
